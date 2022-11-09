@@ -33,7 +33,7 @@ case "$1" in
     # The .initialized file is a semaphore to diffenciate when initialize the data
     # and when only start the application
     if [[ ! -f ${DATA_FOLDER}/.initialized ]]; then
-      echo "==> Data not initialized. Initializing now..."
+      echo "==> Data not initialized. Initializing now.."
       # Create data folder
       mkdir -p ${DATA_FOLDER}
       # Touch semaphore
