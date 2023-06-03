@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router';
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <Footer />
     </div>
   );
 }

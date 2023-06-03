@@ -43,7 +43,6 @@
 }
 
 .menu-navegacion {
-  background-image: url("./images/NBA-Court.jpeg");
   background-color: #282c34;
   color: white;
   padding: 10px;
@@ -99,4 +98,18 @@
 
 .base {
   background-color: #282c34;
+}
+
+.footer {
+  background-color: #282c34;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trademark {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #ffffff;
 }

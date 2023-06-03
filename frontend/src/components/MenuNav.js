@@ -5,9 +5,9 @@ import { Link, Outlet } from 'react-router-dom';
 function MenuNavegacion() {
   return (
     <nav className="menu-navegacion">
-      <div className='logo'>
+      <Link to ="/" className='logo'>
         <img src={imagen} alt="logo"/>
-      </div>
+      </Link>
       <ul className="menu-lista">
         <li>
           <Link to="/">Inicio</Link>
