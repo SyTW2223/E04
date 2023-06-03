@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './images/NBA-Logo.png';
 import './App.css';
 import MenuNavegacion from './components/MenuNav';
 import { Route, Routes } from 'react-router';

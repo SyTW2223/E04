@@ -14,6 +14,11 @@
 }
 
 .App-header {
+  background: url("./images/NBA-Court.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -38,6 +43,7 @@
 }
 
 .menu-navegacion {
+  background-image: url("./images/NBA-Court.jpeg");
   background-color: #282c34;
   color: white;
   padding: 10px;
@@ -63,7 +69,7 @@
 }
 
 .menu-navegacion a:hover {
-  color: #61dbfb;
+  color: #ee1c1c;
 }
 
 .logo img{
