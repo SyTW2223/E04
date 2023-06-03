@@ -1,5 +1,6 @@
 import React from 'react';
-import imagen from './imagenes/NBA-Logo.png';
+import imagen from './NBA-Logo.png';
+import { Link, Outlet } from 'react-router-dom';
 
 function MenuNavegacion() {
   return (
@@ -8,11 +9,20 @@ function MenuNavegacion() {
         <img src={imagen} alt="logo"/>
       </div>
       <ul className="menu-lista">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/sobre-nosotros">Sobre nosotros</a></li>
-        <li><a href="/servicios">Servicios</a></li>
-        <li><a href="/contacto">Contacto</a></li>
+        <li>
+          <Link to="/">Inicio</Link>
+        </li>
+        <li>
+          <Link to="about">Sobre Nosotros</Link>
+        </li>
+        <li>
+          <Link to="login">Login</Link>
+        </li>
+        <li>
+          <Link to="register">Registro</Link>
+        </li>
       </ul>
+      <Outlet />
     </nav>
   );
 }
