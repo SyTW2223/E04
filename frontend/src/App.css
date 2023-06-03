@@ -14,6 +14,11 @@
 }
 
 .App-header {
+  background: url("./images/NBA-Court.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -35,4 +40,76 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.menu-navegacion {
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-navegacion ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-navegacion li {
+  margin-right: 10px;
+}
+
+.menu-navegacion a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-navegacion a:hover {
+  color: #ee1c1c;
+}
+
+.logo img{
+  height: 80px;
+}
+
+.menu-lista {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: auto; /* Asegura que ocupe todo el alto del contenedor */
+  width: 100%;
+}
+
+.menu-lista li {
+  margin-right: 10px;
+}
+
+.menu-lista a {
+  color: white;
+  text-decoration: none;
+}
+
+.base {
+  background-color: #282c34;
+}
+
+.footer {
+  background-color: #282c34;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trademark {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #ffffff;
 }
