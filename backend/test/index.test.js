@@ -2,12 +2,13 @@ import request from "supertest";
 import { expect } from "chai";
 import { app } from "../index.js";
 import { User } from "../models/user.model.js";
-import jsonwebtoken from "jsonwebtoken";
+import { verifyJwt } from "../middlewares/verifyJwt.js";
+
+import jsonwebtoken from 'jsonwebtoken';
 import bcrypt from "bcryptjs";
 import sinon from "sinon";
 
 import { signUp, signIn } from "../controllers/auth.controller.js";
-
 
 describe("Test server", () => {
   it("should respond with status 404 for GET request to /", async () => {
@@ -153,5 +154,26 @@ describe("Test server Auth Routes", () => {
         findOneStub.restore();
       });
     });
+  });
+  describe('Test server VerifyJwt', () => {
+    it('should send "No token provided" if no token is provided', () => {
+      const req = { body: {} };
+      const res = {
+        send: (response) => {
+          expect(response.message).to.equal('No token provided');
+        },
+      };
+      verifyJwt(req, res);
+    });
+    it('should send the error message if the token verification fails', () => {
+      const token = jsonwebtoken.sign({ userId: 1 }, 'invalid-secret');
+      const req = { body: { token } };
+      const res = {
+        send: (response) => {
+          expect(response.message).to.equal('invalid signature');
+        },
+      };
+      verifyJwt(req, res);
+    });  
   });
 });

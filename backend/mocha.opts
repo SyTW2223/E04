@@ -1,0 +1,4 @@
+--require esm
+--recursive
+--timeout 5000
+--exit

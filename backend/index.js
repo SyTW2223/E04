@@ -2,7 +2,7 @@ import express from "express";
 import { authRouter } from "./routes/auth.route.js";
 import "./config/db.js"
 
-const app = express();
+export const app = express();
 app.use(express.json());
 app.use(authRouter);
 
