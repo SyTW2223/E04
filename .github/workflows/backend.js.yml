@@ -24,11 +24,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-   
-    - name: Install dependencies
-      working-directory: ./backend
-      run: npm install
+        cache: 'npm'
     
-    - name: Run Backend Tests
+    - run: npm install
+      working-directory: ./backend
+    
+    - run: npm test
       working-directory: ./backend 
-      run: npm test
