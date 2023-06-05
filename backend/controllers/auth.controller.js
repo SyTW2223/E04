@@ -5,7 +5,8 @@ import { User } from "../models/user.model.js";
 export const signUp = (req, res) => {
     const user = new User({
         user: req.body.user,
-        password: bcrypt.hashSync(req.body.password, 8)
+        password: bcrypt.hashSync(req.body.password, 8),
+        fruits: req.body.fruits
     });
 
     user.save()
