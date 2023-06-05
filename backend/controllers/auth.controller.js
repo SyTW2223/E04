@@ -38,7 +38,7 @@ export const signIn = (req, res) => {
         
         const token = jsonwebtoken.sign(
             { user: user.user},
-            "secret",
+            process.env.TOKEN_SECRET,
             { expiresIn: "86400s" }
         );
 

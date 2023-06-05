@@ -1,13 +1,18 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const databaseHost = "172.16.29.2";
-const databasePort = "27017";
-const databaseUser = "admin";
-const databasePassword = "pass";
-const databaseName = "app";
-const databaseConnectionOpts = "";
+dotenv.config();
+
+const databaseHost = process.env.DATABASE_HOST;
+const databasePort = process.env.DATABASE_PORT;
+const databaseUser = process.env.DATABASE_USER;
+const databasePassword = process.env.DATABASE_PASSWORD;
+const databaseName = process.env.DATABASE_NAME;
+const databaseConnectionOpts = process.env.DATABASE_CONNECTION_OPTIONS;
 
 const url = "mongodb://" + databaseUser + ":" + databasePassword + "@" + databaseHost + ":" + databasePort + "/" + databaseName + "?" + databaseConnectionOpts;
+
+console.log(url);
 
 mongoose.connect(url)
 .catch((error) => {
