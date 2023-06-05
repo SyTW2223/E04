@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(authRouter);
 app.use(userRouter);
 
-const port = 8080;
+const port = process.env.BACKEND_PORT;;
 app.listen(port, () => {
     console.log("Server on port " + port);
 });

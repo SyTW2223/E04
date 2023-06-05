@@ -4,13 +4,14 @@ export const verifyJwt = (req, res, next) => {
     const token = req.body.token;
 
     if (!token) {
-        res.send({ message: "No token provided" });
+        res.status(403).send({ message: "No token provided" });
         return;
     }
 
     jsonwebtoken.verify(token, process.env.TOKEN_SECRET, (error) => {
         if (error) {
-            res.send({ message: error.message  });
+            res.status(401).send({ message: error.message });
+            return;
         }
     });
 

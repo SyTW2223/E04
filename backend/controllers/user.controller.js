@@ -6,10 +6,10 @@ export const home = (req, res) => {
     Axios({ method: "GET",
             url: "https://fruityvice.com/api/fruit/all"})
     .catch((error) => {
-        res.send({ message: error });
+        res.status(500).send({ message: error });
     })
     .then((fruits) => {
-        res.send(fruits.data);
+        res.status(200).send(fruits.data);
     });
 };
 
@@ -18,13 +18,13 @@ export const profile = (req, res) => {
 
     User.findOne({ user: user })
     .catch((error) => {
-        res.send({ message: error });
+        res.status(500).send({ message: error });
     })
     .then((user) => {
         if (!user) {
-            res.send({ message: "User not found" });
+            res.status(404).send({ message: "User not found" });
         }
 
-        res.send(user.fruits);
+        res.status(200).send(user.fruits);
     });
 };

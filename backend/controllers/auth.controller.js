@@ -11,21 +11,21 @@ export const signUp = (req, res) => {
 
     user.save()
     .catch((error) => {
-        res.send({ message: error });
+        res.status(500).send({ message: error });
     })
     .then(() => {
-        res.send({ message: "User was registered successfully" });
+        res.status(200).send({ message: "User was registered successfully" });
     });
 };
 
 export const signIn = (req, res) => {
     User.findOne({ user: req.body.user })
     .catch((error) => {
-        res.send({ message: error });
+        res.status(500).send({ message: error });
     })
     .then((user) => {
         if (!user) {
-            res.send({ message: "User not found" });
+            res.status(404).send({ message: "User not found" });
         }
 
         const validPassword = bcrypt.compareSync(
@@ -34,7 +34,7 @@ export const signIn = (req, res) => {
         );
 
         if (!validPassword) {
-            res.status.send({ message: "Invalid password" });
+            res.status(401).send({ message: "Invalid password" });
         }
         
         const token = jsonwebtoken.sign(
