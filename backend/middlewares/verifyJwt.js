@@ -1,6 +1,6 @@
 import jsonwebtoken from "jsonwebtoken";
 
-export const verifyJwt = (req, res) => {
+export const verifyJwt = (req, res, next) => {
     const token = req.body.token;
 
     if (!token) {
@@ -13,4 +13,6 @@ export const verifyJwt = (req, res) => {
             res.send({ message: error.message  });
         }
     });
+
+    next();
 };
