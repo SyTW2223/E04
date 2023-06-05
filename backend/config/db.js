@@ -12,8 +12,6 @@ const databaseConnectionOpts = process.env.DATABASE_CONNECTION_OPTIONS;
 
 const url = "mongodb://" + databaseUser + ":" + databasePassword + "@" + databaseHost + ":" + databasePort + "/" + databaseName + "?" + databaseConnectionOpts;
 
-console.log(url);
-
 mongoose.connect(url)
 .catch((error) => {
     console.log(error);
