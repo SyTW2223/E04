@@ -1,5 +1,5 @@
 import React from 'react';
-import imagen from '../images/NBA-Logo.png';
+import imagen from '../logo.png';
 import { Link, Outlet } from 'react-router-dom';
 
 function MenuNavegacion() {

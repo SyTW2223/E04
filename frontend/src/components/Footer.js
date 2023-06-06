@@ -9,7 +9,7 @@ export const Footer = () => {
         <li><Link to="/login">Iniciar sesión</Link></li>
         <li><Link to="/register">Registrarse</Link></li>
       </ul>
-      <div className="trademark">&copy; 2023 NBA NOW. Todos los derechos reservados.</div>
+      <div className="trademark">&copy; 2023 Fruit.js. Todos los derechos reservados.</div>
     </footer>
   )
 }
