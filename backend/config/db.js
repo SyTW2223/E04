@@ -10,7 +10,7 @@ const databasePassword = process.env.DATABASE_PASSWORD;
 const databaseName = process.env.DATABASE_NAME;
 const databaseConnectionOpts = process.env.DATABASE_CONNECTION_OPTIONS;
 
-const url = "mongodb://" + databaseUser + ":" + databasePassword + "@" + databaseHost + ":" + databasePort + "/" + databaseName + "?" + databaseConnectionOpts;
+export const url = "mongodb://" + databaseUser + ":" + databasePassword + "@" + databaseHost + ":" + databasePort + "/" + databaseName + "?" + databaseConnectionOpts;
 
 mongoose.connect(url)
 .catch((error) => {
