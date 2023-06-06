@@ -8,7 +8,7 @@ export const BotonFav = ({ onClick, active }) => {
     setStyle("fav-button");
   };
 
-  if (style == "star-button"){
+  if (style === "star-button"){
     changeStyle = () => {
       setStyle("fav-button")
     }

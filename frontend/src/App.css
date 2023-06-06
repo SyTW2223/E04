@@ -114,6 +114,9 @@
 .card {
   position: relative;
   display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  justify-items: flex-start;
   grid-template-areas: 
     'name name'
     'family calories'
@@ -121,13 +124,14 @@
     'carbohydrates protein';
   background-color: #f5f5f5;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
-  width: fit-content;
+  width: 500px;
 }
 
 .card h2 {
+  padding-right: 20%;
   grid-area: name;
 }
 
@@ -155,19 +159,14 @@
   grid-area: protein;
 }
 
-.categoria {
-  color: black;
-  font-weight: bold;
-}
-
 .star-button {
   background-color: transparent;
   color: lightgray;
   border: 0;
-  font-size:35px;
+  font-size:45px;
   cursor: pointer;
   position: absolute;
-  right: 2px;
+  right: 8px;
   top: 2px;
 }
 
@@ -179,9 +178,52 @@
   background-color: transparent;
   color: peachpuff;
   border: 0;
-  font-size:35px;
+  font-size:45px;
   cursor: pointer;
   position: absolute;
-  right: 2px;
+  right: 8px;
   top: 2px;
+}
+
+.imagen-carta{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+.cuadricula{
+  position: relative;
+  display: grid;
+  margin-left: 400px;
+  margin-right: 400px;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  grid-template-areas: 
+    'uno dos'
+    'tres cuatro'
+    'cinco seis';
+}
+
+.cuadricula div:nth-of-type(1) {
+  grid-area: uno;
+}
+
+.cuadricula div:nth-of-type(2) {
+  grid-area: dos;
+}
+
+.cuadricula div:nth-of-type(3) {
+  grid-area: tres;
+}
+
+.cuadricula div:nth-of-type(4) {
+  grid-area: cuatro;
+}
+
+.cuadricula div:nth-of-type(5) {
+  grid-area: cinco;
+}
+
+.cuadricula div:nth-of-type(6) {
+  grid-area: seis;
 }
