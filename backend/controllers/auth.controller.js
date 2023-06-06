@@ -33,7 +33,7 @@ export const signIn = async (req, res) => {
     }
     const token = jsonwebtoken.sign(
       { user: user.user },
-      process.env.TOKEN_SECRET | "secret",
+      "secret",
       { expiresIn: "86400s" }
     );
     res.send({ token: token });

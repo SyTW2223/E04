@@ -20,8 +20,13 @@ export const profile = async (req, res) => {
         if (!foundUser) {
             return res.status(404).send({ message: "User not found" });
         }
+
+        const fruits = await Promise.all(foundUser.fruits.map(async (fruit) => {
+            const response = await Axios.get("https://fruityvice.com/api/fruit/" + fruit);
+            return response.data;
+        }));
   
-        return res.status(200).send(foundUser.fruits);
+        return res.status(200).send(fruits);
     } catch (error) {
         return res.status(500).send({ message: error.message });
     }
