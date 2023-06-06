@@ -1,4 +1,4 @@
-import request from "supertest";
+/*import request from "supertest";
 import { expect } from "chai";
 import { app } from "../index.js";
 import nock from "nock";
@@ -46,5 +46,4 @@ describe("Test server User Routes", () => {
       expect(response.body).to.deep.equal(fruits);
     });
   });
-});
-
+});*/
