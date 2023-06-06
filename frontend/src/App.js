@@ -6,8 +6,19 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Footer } from './components/Footer';
+import { Card } from './components/Card';
 
 function App() {
+  const data = {
+    name: 'Banana',
+    family: 'Pingas',
+    calories: 100,
+    fat: 5,
+    sugar: 10,
+    carbohydrates: 20,
+    protein: 15
+  };
+
   return (
     <div className="App">
       <MenuNavegacion />
@@ -16,6 +27,7 @@ function App() {
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Register />}/>
       </Routes>
+      <Card data = {data}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
