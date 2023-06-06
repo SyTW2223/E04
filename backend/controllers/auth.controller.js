@@ -17,7 +17,6 @@ export const signUp = async (req, res) => {
   }
 };
 
-
 export const signIn = async (req, res) => {
   try {
     const user = await User.findOne({ user: req.body.user });
