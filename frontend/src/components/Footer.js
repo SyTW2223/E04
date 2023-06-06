@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className="menu-navegacion">
       <ul className="menu-lista">
-        <li><Link to="/about">Sobre nosotros</Link></li>
+        <li><Link to="/profile">Perfil</Link></li>
         <li><Link to="/login">Iniciar sesión</Link></li>
         <li><Link to="/register">Registrarse</Link></li>
       </ul>

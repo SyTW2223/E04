@@ -2,7 +2,7 @@ import logo from './logo.png';
 import './App.css';
 import MenuNavegacion from './components/MenuNav';
 import { Route, Routes } from 'react-router';
-import About from "./pages/About";
+import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Footer } from './components/Footer';
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <MenuNavegacion />
       <Routes>
-        <Route path="/about" element={<About />}/>
+        <Route path="/profile" element={<Profile />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Register />}/>
       </Routes>

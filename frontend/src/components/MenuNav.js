@@ -13,7 +13,7 @@ function MenuNavegacion() {
           <Link to="/">Inicio</Link>
         </li>
         <li>
-          <Link to="about">Sobre Nosotros</Link>
+          <Link to="profile">Perfil</Link>
         </li>
         <li>
           <Link to="login">Login</Link>
