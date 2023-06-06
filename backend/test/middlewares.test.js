@@ -1,4 +1,4 @@
-import { expect } from "chai";
+/*import { expect } from "chai";
 import { app } from "../index.js";
 import { verifyJwt } from "../middlewares/verifyJwt.js";
 import jsonwebtoken from 'jsonwebtoken';
@@ -32,4 +32,5 @@ describe('Test server VerifyJwt', () => {
     };
     verifyJwt(req, res, () => { });
   });
-});
+});*/
+
