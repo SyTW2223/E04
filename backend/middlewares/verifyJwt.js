@@ -8,7 +8,7 @@ export const verifyJwt = (req, res, next) => {
         return;
     }
 
-    jsonwebtoken.verify(token, process.env.TOKEN_SECRET, (error) => {
+    jsonwebtoken.verify(token, process.env.TOKEN_SECRET | "secret", (error) => {
         if (error) {
             res.status(401).send({ message: error.message });
             return;
