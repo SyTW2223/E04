@@ -1,5 +1,5 @@
 import React from 'react';
-import imagen from '../images/NBA-Logo.png';
+import imagen from '../images/header-logo.png';
 import { Link, Outlet } from 'react-router-dom';
 
 function MenuNavegacion() {
@@ -13,7 +13,7 @@ function MenuNavegacion() {
           <Link to="/">Inicio</Link>
         </li>
         <li>
-          <Link to="about">Sobre Nosotros</Link>
+          <Link to="profile">Perfil</Link>
         </li>
         <li>
           <Link to="login">Login</Link>
