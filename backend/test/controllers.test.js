@@ -99,7 +99,7 @@ describe("Test server Auth Controllers", () => {
     it("should create a new user and return success message", async () => {
       const req = {
         body: {
-          user: "orlando",
+          user: "adrian",
           password: "pass",
         },
       };
@@ -117,7 +117,7 @@ describe("Test server Auth Controllers", () => {
     it("should handle error and return error message", async () => {
       const req = {
         body: {
-          user: "orlando",
+          user: "adrian",
           password: "pass",
         },
       };
@@ -140,7 +140,7 @@ describe("Test server Auth Controllers", () => {
     it("should return error message if user is not found", async () => {
       const req = {
         body: {
-          user: "orlando",
+          user: "adrian",
           password: "pass",
         },
       };
@@ -162,7 +162,7 @@ describe("Test server Auth Controllers", () => {
     it("should return error message if password is invalid", async () => {
       const req = {
         body: {
-          user: "orlando",
+          user: "adrian",
           password: "pass",
         },
       };
@@ -187,12 +187,12 @@ describe("Test server Auth Controllers", () => {
     it("should return token if user is found and password is valid", async () => {
       const req = {
         body: {
-          user: "orlando",
+          user: "adrian",
           password: "pass",
         },
       };
       const user = {
-        user: "orlando",
+        user: "adrian",
         password: bcrypt.hashSync("pass", 8),
       };
       const res = {

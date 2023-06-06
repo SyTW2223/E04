@@ -20,14 +20,14 @@ describe("Test server Auth Routes", () => {
   it("should respond with status 200 for POST request to /signin", async () => {
     const response = await request(app)
       .post("/signin")
-      .send({ user: "orlando", password: "pass"});
+      .send({ user: "adrian", password: "pass"});
     expect(response.statusCode).to.equal(200);
   });
 
   it("should respond with status 200 for POST request to /signup", async () => {
     const response = await request(app)
       .post("/signup")
-      .send({ user: "orlando", password: "pass" });
+      .send({ user: "adrian", password: "pass" });
     expect(response.statusCode).to.equal(200);
   });
 });
