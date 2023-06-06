@@ -43,5 +43,12 @@ export const addFavFruit = (req, res) => {
 };
 
 export const removeFavFruit = (req, res) => {
-    
+    const user = jsonwebtoken.decode(req.body.token).user;
+    User.updateOne({ user: user }, { $pull: { "fruits": req.body.fruit } })
+    .catch((error) => {
+        res.status(500).send({ message: error.message });
+    })
+    .then(() =>{
+        return res.status(200).send();
+    });
 };
