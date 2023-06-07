@@ -27,10 +27,10 @@ function App() {
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Register />}/>
       </Routes>
-      <Grid data = {data}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <Grid data = {data}/>
       <Footer />
     </div>
   );
