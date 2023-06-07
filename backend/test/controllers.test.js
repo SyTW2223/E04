@@ -248,61 +248,31 @@ chai.use(spies);*/
   });
 });*/
 
-import { expect } from 'chai';
-import sinon from 'sinon';
-import { User } from "../models/user.model.js";
-import { signUp, signIn } from "../controllers/auth.controller.js";
+// Importa las librerías necesarias
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+import { app } from "../index.js";
 
-describe('Controller: signUp', () => {
-  it('should register a user successfully', async () => {
-    // Datos de ejemplo para el cuerpo de la solicitud
-    const req = {
-      body: {
-        user: 'testuser',
-        password: 'testpassword',
-        fruits: ['apple', 'banana']
-      }
+// Configura Chai
+chai.use(chaiHttp);
+const expect = chai.expect;
+
+// Pruebas para el controlador signUp
+describe('signUp', () => {
+  it('debería registrar un usuario correctamente', (done) => {
+    const newUser = {
+      user: 'nuevo_usuario',
+      password: 'contraseña',
+      fruits: [1, 2]
     };
 
-    const saveStub = sinon.stub(User.prototype, 'save').resolves(); // Simula el comportamiento de la función save() del modelo User
-
-    const res = {
-      status: sinon.stub().returnsThis(), // Retorna res para encadenar llamadas
-      send: sinon.stub() // Simula la función send() de res
-    };
-
-    await signUp(req, res);
-
-    expect(saveStub.calledOnce).to.be.true;
-    expect(res.status.calledWith(200)).to.be.true;
-    expect(res.send.calledWith({ message: "User was registered successfully" })).to.be.true;
-
-    saveStub.restore(); // Restaura la función save() original
-  });
-
-  it('should handle error while registering user', async () => {
-    // Datos de ejemplo para el cuerpo de la solicitud
-    const req = {
-      body: {
-        user: 'testuser',
-        password: 'testpassword',
-        fruits: ['apple', 'banana']
-      }
-    };
-
-    const saveStub = sinon.stub(User.prototype, 'save').rejects(new Error('Database error')); // Simula un error al guardar el usuario
-
-    const res = {
-      status: sinon.stub().returnsThis(), // Retorna res para encadenar llamadas
-      send: sinon.stub() // Simula la función send() de res
-    };
-
-    await signUp(req, res);
-
-    expect(saveStub.calledOnce).to.be.true;
-    expect(res.status.calledWith(500)).to.be.true;
-    expect(res.send.calledWith({ message: "Error occurred while registering user" })).to.be.true;
-
-    saveStub.restore(); // Restaura la función save() original
+    chai.request(app)
+      .post('/signup')
+      .send(newUser)
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        expect(res.body).to.have.property('message').equal('User was registered successfully');
+        done();
+      });
   });
 });

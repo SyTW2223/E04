@@ -8,7 +8,7 @@ const databasePort = "27017";
 const databaseUser = "admin";
 const databasePassword = "pass";
 const databaseName = "app"
-const databaseConnectionOpts = "";
+const databaseConnectionOpts = "directConnection=true";
 
 export const url = "mongodb://" + databaseUser + ":" + databasePassword + "@" + databaseHost + ":" + databasePort + "/" + databaseName + "?" + databaseConnectionOpts;
 
