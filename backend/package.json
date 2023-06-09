@@ -14,6 +14,7 @@
     "bcryptjs": "^2.4.3",
     "chai-http": "^4.3.0",
     "chai-spies": "^1.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",

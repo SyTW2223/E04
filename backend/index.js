@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { authRouter } from "./routes/auth.route.js";
 import { userRouter } from "./routes/user.route.js";
 import "./config/db.js"

@@ -270,6 +270,7 @@ describe('signUp', () => {
       .post('/signup')
       .send(newUser)
       .end((err, res) => {
+        expect(err).to.be.null;         // Verifica si hay algún error en la solicitud
         expect(res).to.have.status(200);
         expect(res.body).to.have.property('message').equal('User was registered successfully');
         done();

@@ -2,7 +2,7 @@ import jsonwebtoken from "jsonwebtoken";
 import Axios from "axios";
 import { User } from "../models/user.model.js";
 
-export const home = (req, res) => {
+export const home = async (req, res) => {
     Axios.get("https://fruityvice.com/api/fruit/all")
     .then((response) => {
         res.status(200).send(response.data);
