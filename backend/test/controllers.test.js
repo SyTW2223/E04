@@ -258,22 +258,20 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 
 // Pruebas para el controlador signUp
-describe('signUp', function() {
-  it('debería registrar un usuario correctamente', function(done) {
+describe('signUp', () => {
+  it('debería registrar un usuario correctamente', async () => {
     const newUser = {
       user: 'nuevo_usuario',
       password: 'contraseña',
       fruits: [1, 2]
     };
 
-    chai.request(app)
+    const res = await chai.request(app)
       .post('/signup')
-      .send(newUser)
-      .end(function(err, res) {
-        expect(err).to.be.null;
-        expect(res).to.have.status(200);
-        expect(res.body).to.have.property('message').equal('User was registered successfully');
-        done();
-      });
+      .send(newUser);
+
+    expect(res).to.have.status(200);
+    expect(res.body).to.have.property('message').equal('User was registered successfully');
   }).timeout(5000);
 });
+
