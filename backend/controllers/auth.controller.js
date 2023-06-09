@@ -2,46 +2,42 @@ import jsonwebtoken from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { User } from "../models/user.model.js";
 
-export const signUp = (req, res) => {
+export const signUp = async (req, res) => {
+  try {
     const user = new User({
-        user: req.body.user,
-        password: bcrypt.hashSync(req.body.password, 8)
+      user: req.body.user,
+      password: bcrypt.hashSync(req.body.password, 8),
+      fruits: req.body.fruits
     });
 
-    user.save()
-    .catch((error) => {
-        res.send({ message: error });
-    })
-    .then(() => {
-        res.send({ message: "User was registered successfully" });
-    });
+    await user.save();
+    res.status(200).send({ message: "User was registered successfully" });
+  } catch (error) {
+    res.status(500).send({ message: "Error occurred while registering user" });
+  }
 };
 
-export const signIn = (req, res) => {
-    User.findOne({ user: req.body.user })
-    .catch((error) => {
-        res.send({ message: error });
-    })
-    .then((user) => {
-        if (!user) {
-            res.send({ message: "User not found" });
-        }
+export const signIn = async (req, res) => {
+  try {
+    const user = await User.findOne({ user: req.body.user });
 
-        const validPassword = bcrypt.compareSync(
-            req.body.password,
-            user.password
-        );
-
-        if (!validPassword) {
-            res.status.send({ message: "Invalid password" });
-        }
-        
-        const token = jsonwebtoken.sign(
-            { user: user.user},
-            "secret",
-            { expiresIn: "86400s" }
-        );
-
-        res.send({ token: token });
-    });
+    if (!user) {
+      return res.status(404).send({ message: "User not found" });
+    }
+    const validPassword = bcrypt.compareSync(
+      req.body.password,
+      user.password
+    );
+    if (!validPassword) {
+      return res.status(401).send({ message: "Invalid password" });
+    }
+    const token = jsonwebtoken.sign(
+      { user: user.user },
+      "secret",
+      { expiresIn: "86400s" }
+    );
+    res.send({ token: token });
+  } catch (error) {
+    res.status(500).send({ message: error });
+  }
 };
