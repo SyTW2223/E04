@@ -7,7 +7,6 @@ import Register from "./pages/Register";
 import { Footer } from './components/Footer';
 import { Home } from './components/Home';
 import { Grid } from './components/Grid.js';
-import logo from "./logo.png";
 
 function App() {
   return (
@@ -20,9 +19,6 @@ function App() {
         <Route path="/register" element={<Register />}/>
       </Routes>
       <Grid/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
       <Footer />
     </div>
   );
