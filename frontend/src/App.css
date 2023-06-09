@@ -1,9 +1,10 @@
 .App {
   text-align: center;
+  background-color: white;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -14,14 +15,14 @@
 }
 
 .App-header {
-  background-color: white;
-  min-height: 100vh;
+  background-color: inherit;
+  min-height: 38vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: peachpuff;
 }
 
 .App-link {
@@ -37,8 +38,14 @@
   }
 }
 
+.home-logo {
+  max-width: 12%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
 .menu-navegacion {
-  background-color: white;
+  background-color: #f9f9f9;
   color: peachpuff;
   padding: 10px;
   padding-left: 40px;
@@ -94,11 +101,11 @@
 }
 
 .base {
-  background-color: white;
+  background-color: peachpuff;
 }
 
 .footer {
-  background-color: white;
+  background-color: peachpuff;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -122,7 +129,7 @@
     'family calories'
     'fat sugar'
     'carbohydrates protein';
-  background-color: #f5f5f5;
+  background-color: #ededed;
   border-radius: 8px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -131,8 +138,8 @@
 }
 
 .card h2 {
-  padding-right: 20%;
   grid-area: name;
+  justify-self: center;
 }
 
 .card p:nth-of-type(1) {
@@ -189,13 +196,17 @@
   height: 70px;
   width: 70px;
   border-radius: 50%;
+  position: absolute;
+  left: 16px;
+  top: 8px;
 }
 
 .cuadricula{
   position: relative;
+  background-color: inherit;
   display: grid;
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: 18%;
+  margin-right: 18%;
   grid-template-columns: 1fr;
   grid-gap: 8px;
   grid-template-areas: 
@@ -226,4 +237,15 @@
 
 .cuadricula div:nth-of-type(6) {
   grid-area: seis;
+}
+
+.page-header {
+  font-family: 'Nirmala UI';
+  font-weight: lighter;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+  margin-top: 40px;
+  height: 80px;
+  width: 74%;
+  margin-left: 13%;
 }

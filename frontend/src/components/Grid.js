@@ -23,7 +23,7 @@ export const Grid = () => {
         {
           fruits && fruits.map((fruit) => (
             <div key = {fruit.id}>
-            <Card data = {fruit}/>
+              <Card data = {fruit}/>
             </div>
           ))  
         }
