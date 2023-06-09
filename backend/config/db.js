@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 //dotenv.config();
 
-const databaseHost = "172.16.29.2";
+const databaseHost = "10.6.130.207";
 const databasePort = "27017";
 const databaseUser = "admin";
 const databasePassword = "pass";
