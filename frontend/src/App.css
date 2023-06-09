@@ -38,6 +38,12 @@
   }
 }
 
+.home-logo {
+  max-width: 12%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
 .menu-navegacion {
   background-color: #f9f9f9;
   color: peachpuff;
@@ -123,7 +129,7 @@
     'family calories'
     'fat sugar'
     'carbohydrates protein';
-  background-color: peachpuff;
+  background-color: lightgray;
   border-radius: 8px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -162,7 +168,7 @@
 
 .star-button {
   background-color: transparent;
-  color: lightgray;
+  color: gray;
   border: 0;
   font-size:45px;
   cursor: pointer;
@@ -172,12 +178,12 @@
 }
 
 .star-button:hover{
-  color: limegreen;
+  color: peachpuff;
 }
 
 .fav-button{
   background-color: transparent;
-  color: limegreen;
+  color: peachpuff;
   border: 0;
   font-size:45px;
   cursor: pointer;
@@ -231,4 +237,15 @@
 
 .cuadricula div:nth-of-type(6) {
   grid-area: seis;
+}
+
+.page-header {
+  font-family: 'Nirmala UI';
+  font-weight: lighter;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+  margin-top: 40px;
+  height: 80px;
+  width: 74%;
+  margin-left: 13%;
 }
