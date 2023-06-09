@@ -129,7 +129,7 @@
     'family calories'
     'fat sugar'
     'carbohydrates protein';
-  background-color: lightgray;
+  background-color: #ededed;
   border-radius: 8px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -168,7 +168,7 @@
 
 .star-button {
   background-color: transparent;
-  color: gray;
+  color: lightgray;
   border: 0;
   font-size:45px;
   cursor: pointer;
