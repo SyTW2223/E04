@@ -271,9 +271,8 @@ describe('signUp', () => {
       .send(newUser)
       .end((err, res) => {
         expect(err).to.be.null;
-        expect(res).to.have.status(200);
-        expect(res.body).to.have.property('message').equal('User was registered successfully');
+        expect(res).to.have.status(200).with.property('text', 'User was registered successfully');
         done();
       });
-  }).timeout(5000); // Aumenta el tiempo de espera a 5000ms
+  }).timeout(5000);
 });
