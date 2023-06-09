@@ -5,7 +5,7 @@ import { ImagenFruta } from './ImagenFruta'
 export const Card = ({ data }) => {
   return (
     <div className="card">
-      <BotonFav />
+      <BotonFav data = {data}/>
       <ImagenFruta /> {/*Pasar data.name al componente para importar la imagen de la fruta correspondiente*/}
       <h2>{data.name}</h2>
       <p><b>Family: </b>{data.family}</p>

@@ -6,7 +6,6 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Footer } from './components/Footer';
 import { Home } from './components/Home';
-import { Grid } from './components/Grid.js';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Register />}/>
       </Routes>
-      <Grid/>
       <Footer />
     </div>
   );
