@@ -6,6 +6,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Footer } from './components/Footer';
 import { Home } from './components/Home';
+import { Grid } from './components/Grid.js';
+import logo from "./logo.png";
 
 function App() {
   return (
