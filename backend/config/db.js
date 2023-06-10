@@ -8,7 +8,7 @@ const databaseName = "app"
 const databaseConnectionOpts = "directConnection=true";
 
 const config = {
-    connectTimeoutMS: 5000,
+    connectTimeoutMS: 10000,
     socketTimeoutMS: 5000,
     useUnifiedTopology: true
 }
