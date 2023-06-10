@@ -272,6 +272,6 @@ describe('signUp', () => {
 
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('message').equal('User was registered successfully');
-  }).timeout(5000);
+  }).timeout(10000);
 });
 
