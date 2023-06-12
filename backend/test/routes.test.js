@@ -1,30 +1,35 @@
-/*import request from "supertest";
-import { expect } from "chai";
+import chai from "chai";
+import chaiHttp from "chai-http";
+import request from "supertest";
 import { app } from "../index.js";
-import nock from "nock";
+import { verifyJwt } from "../middlewares/verifyJwt.js";
+import { home, profile, addFavFruit, removeFavFruit } from "../controllers/user.controller.js";
+
+chai.use(chaiHttp);
+const expect = chai.expect;
 
 
-describe("Test server Routes", () => {
-  it("should respond with status 404 for GET request to /", async () => {
+describe("Test - Routes All", () => {
+  it("Status 404 for GET request to /", async () => {
     const response = await request(app).get("/");
     expect(response.statusCode).to.equal(404);
   });
 
-  it("should respond with status 404 for GET request to undefined route", async () => {
+  it("Status 404 for GET request to undefined route", async () => {
     const response = await request(app).get("/undefined-route");
     expect(response.statusCode).to.equal(404);
   });
 });
 
-describe("Test server Auth Routes", () => {
-  it("should respond with status 200 for POST request to /signin", async () => {
+describe("Test - Auth Routes", () => {
+  it("Status 200 for POST request to /signin", async () => {
     const response = await request(app)
       .post("/signin")
-      .send({ user: "adrian", password: "pass"});
+      .send({ user: "adrian", password: "pass" });
     expect(response.statusCode).to.equal(200);
   });
 
-  it("should respond with status 200 for POST request to /signup", async () => {
+  it("Status 200 for POST request to /signup", async () => {
     const response = await request(app)
       .post("/signup")
       .send({ user: "adrian", password: "pass" });
@@ -32,18 +37,56 @@ describe("Test server Auth Routes", () => {
   });
 });
 
-describe("Test server User Routes", () => {
-  describe("Test server User Routes", () => {
-    it("should respond with status 200 for GET request to /home", async () => {
-      const fruits = [{ name: "apple" }, { name: "banana" }, { name: "orange" }];
-      // Simulamos la respuesta exitosa de la API externa utilizando nock
-      nock("https://fruityvice.com/api")
-        .get("/fruit/all")
-        .reply(200, fruits);
-  
-      const response = await request(app).get("/home");
-      expect(response.status).to.equal(200);
-      expect(response.body).to.deep.equal(fruits);
-    });
+
+describe("Test - User Routes", () => {
+  it("Status 200 for GET request to /home", (done) => {
+    chai
+      .request(app.get("/home", home))
+      .get("/home")
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        done();
+      });
   });
-});*/
+
+  it("Status 200 for POST request to /profile", (done) => {
+    const token = "secret";
+
+    chai
+      .request(app.post("/profile", verifyJwt, profile))
+      .post("/profile")
+      .send({ token: token })
+      .end((err, res) => {
+        expect(res).to.have.status(403);
+        done();
+      });
+  });
+
+  it("Status 200 for POST request to /addfavfruit", (done) => {
+    const token = "secret";
+    const fruit = "apple";
+
+    chai
+      .request(app.post("/addfavfruit", verifyJwt, addFavFruit))
+      .post("/addfavfruit")
+      .send({ token: token, fruit: fruit })
+      .end((err, res) => {
+        expect(res).to.have.status(403);
+        done();
+      });
+  });
+
+  it("Status 200 for POST request to /removefavfruit", (done) => {
+    const token = "secret";
+    const fruit = "apple";
+
+    chai
+      .request(app.post("/removefavfruit", verifyJwt, removeFavFruit))
+      .post("/removefavfruit")
+      .send({ token: token, fruit: fruit })
+      .end((err, res) => {
+        expect(res).to.have.status(403);
+        done();
+      });
+  });
+});

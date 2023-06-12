@@ -5,6 +5,6 @@ import { home, profile, addFavFruit, removeFavFruit } from "../controllers/user.
 export const userRouter = express.Router();
 
 userRouter.get("/home", home);
-userRouter.post("/profile", [verifyJwt], profile);
-userRouter.post("/addfavfruit", [verifyJwt], addFavFruit);
-userRouter.post("/removefavfruit", [verifyJwt], removeFavFruit);
+userRouter.post("/profile", verifyJwt, profile);
+userRouter.post("/addfavfruit", verifyJwt, addFavFruit);
+userRouter.post("/removefavfruit", verifyJwt, removeFavFruit);

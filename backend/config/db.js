@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
-const databaseHost = "172.16.29.2"; // publica base de datos
+const databaseHost = "10.6.130.207"; // publica base de datos
 const databasePort = "27017";
 const databaseUser = "admin";
-const databasePassword = "pass";
-const databaseName = "app"
-const databaseConnectionOpts = "directConnection=true";
+const DATABASEPASSWORD = "pass";
+const DATABASENAME = "app"
+const DATABASECONNECTIONOPTS = "directConnection=true";
 
 const config = {
     connectTimeoutMS: 10000,
@@ -13,7 +13,7 @@ const config = {
     useUnifiedTopology: true
 }
 
-export const url = "mongodb://" + databaseUser + ":" + databasePassword + "@" + databaseHost + ":" + databasePort + "/" + databaseName + "?" + databaseConnectionOpts;
+export const url = "mongodb://" + databaseUser + ":" + DATABASEPASSWORD + "@" + databaseHost + ":" + databasePort + "/" + DATABASENAME + "?" + DATABASECONNECTIONOPTS;
 
 mongoose.connect(url, config)
 .catch((error) => {

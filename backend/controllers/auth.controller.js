@@ -11,9 +11,9 @@ export const signUp = async (req, res) => {
     });
 
     await user.save();
-    res.status(200).send({ message: "User was registered successfully" });
+    res.status(200).json({ message: "User was registered successfully", user: user.user });
   } catch (error) {
-    res.status(500).send({ message: "Error occurred while registering user" });
+    res.status(500).json({ message: "Error occurred while registering user" });
   }
 };
 
