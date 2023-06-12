@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const databaseHost = "10.6.130.207";
+const databaseHost = "10.6.130.207"; // publica base de datos
 const databasePort = "27017";
 const databaseUser = "admin";
 const databasePassword = "pass";
