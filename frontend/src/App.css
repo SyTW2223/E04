@@ -1,0 +1,251 @@
+.App {
+  text-align: center;
+  background-color: white;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: inherit;
+  min-height: 38vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: peachpuff;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home-logo {
+  max-width: 12%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.menu-navegacion {
+  background-color: #f9f9f9;
+  color: peachpuff;
+  padding: 10px;
+  padding-left: 40px;
+  font-family: 'Nirmala UI', sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-navegacion ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-navegacion li {
+  margin-right: 10px;
+}
+
+.menu-navegacion a {
+  color: peachpuff;
+  text-decoration: none;
+}
+
+.menu-navegacion a:hover {
+  color: limegreen;
+}
+
+.logo img{
+  height: 80px;
+}
+
+.menu-lista {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 100%;
+}
+
+.menu-lista li {
+  margin-right: 10px;
+}
+
+.menu-lista a {
+  color: black;
+  text-decoration: none;
+}
+
+.base {
+  background-color: peachpuff;
+}
+
+.footer {
+  background-color: peachpuff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trademark {
+  font-size: 12px;
+  text-transform: none;
+  color: black;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  justify-items: flex-start;
+  grid-template-areas: 
+    'name name'
+    'family calories'
+    'fat sugar'
+    'carbohydrates protein';
+  background-color: #ededed;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 500px;
+}
+
+.card h2 {
+  grid-area: name;
+  justify-self: center;
+}
+
+.card p:nth-of-type(1) {
+  grid-area: family;
+}
+
+.card p:nth-of-type(2) {
+  grid-area: calories;
+}
+
+.card p:nth-of-type(3) {
+  grid-area: fat;
+}
+
+.card p:nth-of-type(4) {
+  grid-area: sugar;
+}
+
+.card p:nth-of-type(5) {
+  grid-area: carbohydrates;
+}
+
+.card p:nth-of-type(6) {
+  grid-area: protein;
+}
+
+.star-button {
+  background-color: transparent;
+  color: lightgray;
+  border: 0;
+  font-size:45px;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 2px;
+}
+
+.star-button:hover{
+  color: peachpuff;
+}
+
+.fav-button{
+  background-color: transparent;
+  color: peachpuff;
+  border: 0;
+  font-size:45px;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 2px;
+}
+
+.imagen-carta{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  position: absolute;
+  left: 16px;
+  top: 8px;
+}
+
+.cuadricula{
+  position: relative;
+  background-color: inherit;
+  display: grid;
+  margin-left: 18%;
+  margin-right: 18%;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  grid-template-areas: 
+    'uno dos'
+    'tres cuatro'
+    'cinco seis';
+}
+
+.cuadricula div:nth-of-type(1) {
+  grid-area: uno;
+}
+
+.cuadricula div:nth-of-type(2) {
+  grid-area: dos;
+}
+
+.cuadricula div:nth-of-type(3) {
+  grid-area: tres;
+}
+
+.cuadricula div:nth-of-type(4) {
+  grid-area: cuatro;
+}
+
+.cuadricula div:nth-of-type(5) {
+  grid-area: cinco;
+}
+
+.cuadricula div:nth-of-type(6) {
+  grid-area: seis;
+}
+
+.page-header {
+  font-family: 'Nirmala UI';
+  font-weight: lighter;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+  margin-top: 40px;
+  height: 80px;
+  width: 74%;
+  margin-left: 13%;
+}
