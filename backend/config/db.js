@@ -7,15 +7,10 @@ const DATABASEPASSWORD = "pass";
 const DATABASENAME = "app"
 const DATABASECONNECTIONOPTS = "directConnection=true";
 
-const config = {
-    connectTimeoutMS: 10000,
-    socketTimeoutMS: 5000,
-    useUnifiedTopology: true
-}
+//export const url = "mongodb://" + databaseUser + ":" + DATABASEPASSWORD + "@" + databaseHost + ":" + databasePort + "/" + DATABASENAME + "?" + DATABASECONNECTIONOPTS;
+export const url = "mongodb+srv://javiidiazglez:equipo4@cluster0.1s5ihn3.mongodb.net/?retryWrites=true&w=majority";
 
-export const url = "mongodb://" + databaseUser + ":" + DATABASEPASSWORD + "@" + databaseHost + ":" + databasePort + "/" + DATABASENAME + "?" + DATABASECONNECTIONOPTS;
-
-mongoose.connect(url, config)
+mongoose.connect(url)
 .catch((error) => {
     console.log(error);
 })
