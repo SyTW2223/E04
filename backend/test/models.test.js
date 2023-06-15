@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { app } from "../index.js";
 import { User } from "../models/user.model.js";
 
-describe("Test - User Models", () => {
+describe("Tests - User Models", () => {
   it("Status 200 to create a new user with correct properties", () => {
     const userData = {
       user: "orlando",
