@@ -4,13 +4,13 @@ import {useState, useEffect} from 'react'
 import { Link, Outlet } from 'react-router-dom';
 
 
-function LoginComponent () {
+function RegisterComponent () {
     return (
         <div className="body-auth">
             <div className="auth-wrapper">
-                <div className="form-box login">
-                    <h3>¡Hola de nuevo!</h3>
-                    <p>Introduce tus datos para acceder a tu perfil.</p>
+                <div className="form-box register">
+                    <h3>Únete a Fruit.js</h3>
+                    <p>Complementa el formulario para registrarse.</p>
                     <form action="#">
                         <div className="input-box">
                             <span className="icon"><i className="fa-solid fa-user"></i></span>
@@ -23,12 +23,11 @@ function LoginComponent () {
                             <label>Contraseña</label> 
                         </div>
                         <div className="remember-forgot">
-                            <label><input type="checkbox"></input>Recuérdame</label>
-                            <a href="#">¿Olvidaste tu contraseña?</a>
+                            <label><input type="checkbox"></input>Acepto los Términos y Condiciones</label>
                         </div>
-                        <button type="sumbit" className="btn-auth">Iniciar sesión</button>
+                        <button type="sumbit" className="btn-auth">Registrarse</button>
                         <div className="login-register">
-                            <p>¿Aún no estás en Fruit.js? <Link to="/register">Regístrate</Link></p>
+                            <p>¿Ya estás dentro de Fruit.js? <Link to="/login">Inicia sesión</Link></p>
                         </div>
                     </form>
                 </div>
@@ -37,4 +36,4 @@ function LoginComponent () {
     );
 }
 
-export default LoginComponent;
+export default RegisterComponent;

@@ -250,7 +250,7 @@
   margin-left: 13%;
 }
 
-.body-login {
+.body-auth {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -260,7 +260,7 @@
   background-position: center;
 }
 
-.loginComponent {
+.auth-wrapper {
   position: relative;
   width: 470px;
   height: 470px;
@@ -274,9 +274,18 @@
   align-items: center;
 }
 
-.loginComponent .form-box {
+.auth-wrapper  .form-box {
   width: 100%;
   padding: 40px;
+}
+
+.auth-wrapper .form-box.login {
+  /* display: none; */
+}
+
+.auth-wrapper .form-box.register {
+  position: absolute;
+  /* transform: translateX(400px); */
 }
 
 .form-box h3 {
@@ -380,12 +389,12 @@
   margin: 25px 0 10px;
 }
 
-.login-register p a {
+.login-register p Link {
   color:#162938;
   text-decoration: none;
   font-weight: 600;
 }
 
-.login-register p a:hover {
+.login-register p Link:hover {
   text-decoration: underline;
 }
