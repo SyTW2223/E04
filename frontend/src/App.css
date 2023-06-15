@@ -381,6 +381,10 @@
   font-weight: 500;
 }
 
+.btn-auth:hover {
+  background: #2c7505;
+}
+
 .login-register {
   font-size: .9em;
   color:#162938;
@@ -397,4 +401,8 @@
 
 .login-register p Link:hover {
   text-decoration: underline;
+}
+
+.error-msg p {
+  color:red
 }

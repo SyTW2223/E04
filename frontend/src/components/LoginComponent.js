@@ -14,7 +14,7 @@ function LoginComponent () {
                     <form action="#">
                         <div className="input-box">
                             <span className="icon"><i className="fa-solid fa-user"></i></span>
-                            <input type="text" required></input>
+                            <input type="text" id="username" required></input>
                             <label>Usuario</label> 
                         </div>
                         <div className="input-box">
