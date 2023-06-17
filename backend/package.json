@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov"
   },
