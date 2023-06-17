@@ -24,7 +24,10 @@ class SignupForm extends Component {
 
     const { username, password } = this.state;
 
-    axios.post('http://localhost:8080/signup', { username, password })
+    console.log('Valores del formulario:', username, password);
+
+
+    axios.post('http://localhost:8080/signup', { "user": username, "password": password })
       .then((response) => {
         // Aquí puedes manejar la respuesta del backend
         console.log(response.status);
@@ -53,47 +56,57 @@ class SignupForm extends Component {
       });
   }
 
+  handleReloadPage = () => {
+    window.location.reload();
+  }
+
   render() {
     const { username, password, formSubmitted, isError } = this.state;
 
     if (formSubmitted && !isError) {
       return (
-        <div>
-          <h2>Registro exitoso</h2>
+        <div className='feedback-box'>
+          <h2 className='correct-title'>Registro exitoso</h2>
           <p>Tu registro ha sido procesado correctamente.</p>
+          <Link to="/login">Ir al formulario de inicio de sesión</Link>
         </div>
       );
     }
   
     if (formSubmitted && isError) {
       return (
-        <div>
-          <h2>Error en el registro</h2>
+        <div className='feedback-box'>
+          <h2 className='error-title'>Error en el registro</h2>
           <p>Ha ocurrido un error durante el registro. Por favor, intenta nuevamente.</p>
+          <button className='btn-back' onClick={this.handleReloadPage}>Volver al formulario</button>
         </div>
       );
     }
   
     return (
-      <form id="register-form" onSubmit={this.handleFormSubmit}>
-        <div className="input-box">
-            <span className="icon"><i className="fa-solid fa-user"></i></span>
-            <input id="username" type="text" name="username" autoComplete='off' required value={username} onChange={this.handleInputChange} />
-            <label>Usuario</label>
-        </div>
-        <div className="input-box">
-            <span className="icon"><i className="fa-solid fa-lock"></i></span>
-            <input id="password" type="password" name="password" required value={password} onChange={this.handleInputChange} />
-            <label>Contraseña</label>
-        </div>
-        <div className="remember-forgot">
-            <label><input type="checkbox"></input>Acepto los Términos y Condiciones</label>
-        </div>
-        <button type="submit" className="btn-auth">Registrarse</button>
-        <div className="login-register">
-            <p>¿Ya estás dentro de Fruit.js? <Link to="/login">Inicia sesión</Link></p>
-        </div>
-      </form>
+      <div className="form-box register">
+        <h3>Únete a Fruit.js</h3>
+        <p>Complementa el formulario para registrarse.</p>
+        <form id="register-form" onSubmit={this.handleFormSubmit}>
+          <div className="input-box">
+              <span className="icon"><i className="fa-solid fa-user"></i></span>
+              <input id="username" type="text" name="username" autoComplete='off' required value={username} onChange={this.handleInputChange} />
+              <label>Usuario</label>
+          </div>
+          <div className="input-box">
+              <span className="icon"><i className="fa-solid fa-lock"></i></span>
+              <input id="password" type="password" name="password" required value={password} onChange={this.handleInputChange} />
+              <label>Contraseña</label>
+          </div>
+          <div className="remember-forgot">
+              <label><input type="checkbox"></input>Acepto los Términos y Condiciones</label>
+          </div>
+          <button type="submit" className="btn-auth">Registrarse</button>
+          <div className="login-register">
+              <p>¿Ya estás dentro de Fruit.js? <Link to="/login">Inicia sesión</Link></p>
+          </div>
+        </form>
+      </div>
     );
   }
 }
