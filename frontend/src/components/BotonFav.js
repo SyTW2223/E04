@@ -9,10 +9,10 @@ export const BotonFav = ({ data }) => {
   };
   
   if (style === "star-button"){
-    changeStyle = async ( token2 ) => {
-      console.log(token2)
+    changeStyle = async ( token ) => {
+      console.log(token)
       try {
-        const response = await axios.post('http://localhost:8080/addfavfruit', { token: token2, fruit: data.id });
+        const response = await axios.post('http://localhost:8080/addfavfruit', { token: token, fruit: data.id });
         if (response.status === 200) {
           console.log("Añadido a favoritos");
           setStyle("fav-button");
@@ -23,10 +23,12 @@ export const BotonFav = ({ data }) => {
 
     }
   }else {
-    changeStyle = ( token ) => {
-      console.log("Quitado de favoritos");
-  
-      setStyle("star-button")
+    changeStyle = async ( token ) => {
+      const response = await axios.post('http://localhost:8080/removefavfruit', { token: token, fruit: data.id });
+      if (response.status === 200) {
+        console.log("Quitado de favoritos");
+        setStyle("star-button");
+      }
     }
   }
   
