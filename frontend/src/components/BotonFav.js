@@ -1,16 +1,30 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from './Auth/AuthContext';
 import axios from 'axios';
 
 export const BotonFav = ({ data }) => {
+  const { token } = useContext(AuthContext);
   const [style, setStyle] = useState("star-button");
+
+  const isFav = async () => {
+    const response = await axios.post('http://localhost:8080/profile', { token: token });
+    const array = response.data;
+    const objetoEncontrado = array.find(fruit => fruit.id === data.id);
+    if (objetoEncontrado) {
+      setStyle("fav-button");
+    }
+  }
+
+  useEffect( () => {
+    isFav();
+  }, []);
+  
   let changeStyle = () => {
     setStyle("fav-button");
   };
   
   if (style === "star-button"){
     changeStyle = async ( token ) => {
-      console.log(token)
       try {
         const response = await axios.post('http://localhost:8080/addfavfruit', { token: token, fruit: data.id });
         if (response.status === 200) {
