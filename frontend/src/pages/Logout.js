@@ -18,11 +18,13 @@ const LogoutPage = () => {
   };
 
   return (
-    <div className="logout-page">
-      <h2>Cerrar sesión</h2>
-      <p>¿Estás seguro de que deseas cerrar sesión?</p>
-      <button onClick={handleLogoutClick}>Cerrar sesión</button>
-      <p>Volver al <Link to="/">inicio</Link>.</p>
+    <div className='App'>
+      <h1 className='page-header'>Cerrar sesión</h1>
+          <div className="logout-page">
+            <p>¿Estás seguro de que deseas cerrar sesión?</p>
+            <button onClick={handleLogoutClick}>Cerrar sesión</button>
+            <p>Volver al <Link to="/">inicio</Link>.</p>
+          </div>
     </div>
   );
 };
