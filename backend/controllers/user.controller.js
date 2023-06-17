@@ -14,7 +14,7 @@ export const home = async (req, res) => {
 
 export const profile = async (req, res) => {
   try {
-      const user = getUserFromToken(req.body.token);
+      const user = jsonwebtoken.decode(req.body.token).user;
 
       const foundUser = await User.findOne({ user: user });
       if (!foundUser) {
@@ -31,18 +31,10 @@ export const profile = async (req, res) => {
       return res.status(500).send({ message: error.message });
   }
 };
-  
-const getUserFromToken = (token) => {
-    return jsonwebtoken.decode(token).user;
-}
 
 export const addFavFruit = (req, res) => {
-  const token = req.body.token;
-  if (!token || !token.user) {
-    return res.status(400).send({ message: 'Invalid token' });
-  }
-
-  const user = token.user;
+  const user = jsonwebtoken.decode(req.body.token).user;
+  
   User.updateOne({ user: user }, { $push: { "fruits": req.body.fruit } })
     .then(() => {
       return res.status(200).send();
@@ -52,14 +44,9 @@ export const addFavFruit = (req, res) => {
     });
 };
 
-
 export const removeFavFruit = (req, res) => {
-  const token = req.body.token;
-  if (!token || !token.user) {
-    return res.status(400).send({ message: 'Invalid token' });
-  }
+  const user = jsonwebtoken.decode(req.body.token).user;
 
-  const user = token.user;
   User.updateOne({ user: user }, { $pull: { "fruits": req.body.fruit } })
     .then(() => {
       return res.status(200).send();

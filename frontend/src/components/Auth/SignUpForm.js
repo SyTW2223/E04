@@ -27,7 +27,7 @@ class SignupForm extends Component {
     console.log('Valores del formulario:', username, password);
 
 
-    axios.post('http://localhost:8080/signup', { "user": username, "password": password })
+    axios.post('http://localhost:8080/signup', { "user": username, "password": password, "fruits": [] })
       .then((response) => {
         // Aquí puedes manejar la respuesta del backend
         console.log(response.status);

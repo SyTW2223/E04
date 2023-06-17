@@ -279,10 +279,6 @@
   padding: 40px;
 }
 
-.auth-wrapper .form-box.login {
-  /* display: none; */
-}
-
 .auth-wrapper .form-box.register {
   position: absolute;
   /* transform: translateX(400px); */

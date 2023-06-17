@@ -22,7 +22,8 @@ const LoginForm = () => {
           // Inicio de sesión exitoso
           setFormSubmitted(true);
           setIsError(false);
-          handleLogin();
+          const token = response.data.token;
+          handleLogin(token);
         } else {
           // Código de estado inesperado
           setFormSubmitted(true);
@@ -86,7 +87,7 @@ const LoginForm = () => {
           <label>
             <input type="checkbox" />Recuérdame
           </label>
-          <a href="#">¿Olvidaste tu contraseña?</a>
+          <a href="localhost:3000/">¿Olvidaste tu contraseña?</a>
         </div>
         <button type="submit" className="btn-auth">
           Iniciar sesión
