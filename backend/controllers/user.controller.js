@@ -8,7 +8,7 @@ export const home = async (req, res) => {
         res.status(200).send(response.data);
     })
     .catch((error) => {
-        res.status(500).send({ message: error.message });
+        res.status(500).send({ message: error });
     });
 };
 
@@ -28,7 +28,7 @@ export const profile = async (req, res) => {
 
         return res.status(200).send(fruits);
     } catch (error) {
-        return res.status(500).send({ message: error.message });
+        return res.status(500).send({ message: error });
     }
 };
 
@@ -40,7 +40,7 @@ export const addFavFruit = (req, res) => {
         return res.status(200).send();
     })
     .catch((error) => {
-        return res.status(500).send({ message: error.message });
+        return res.status(500).send({ message: error });
     });
 };
 
@@ -52,6 +52,6 @@ export const removeFavFruit = (req, res) => {
         return res.status(200).send();
     })
     .catch((error) => {
-        return res.status(500).send({ message: error.message });
+        return res.status(500).send({ message: error });
     });
 };

@@ -10,7 +10,7 @@ export const verifyJwt = (req, res, next) => {
 
     jsonwebtoken.verify(token, "secret", (error) => {
         if (error) {
-            res.status(401).send({ message: error.message });
+            res.status(401).send({ message: error });
             return;
         }
     });
