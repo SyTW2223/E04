@@ -7,7 +7,7 @@ export const BotonFav = ({ data }) => {
   const [style, setStyle] = useState("star-button");
 
   const isFav = async () => {
-    const response = await axios.post('https://e04-e04.vercel.app/profile', { token: token });
+    const response = await axios.post('https://e04-backend.vercel.app/profile', { token: token });
     const array = response.data;
     const objetoEncontrado = array.find(fruit => fruit.id === data.id);
     if (objetoEncontrado) {
@@ -26,7 +26,7 @@ export const BotonFav = ({ data }) => {
   if (style === "star-button"){
     changeStyle = async ( token ) => {
       try {
-        const response = await axios.post('https://e04-e04.vercel.app/addfavfruit', { token: token, fruit: data.id });
+        const response = await axios.post('https://e04-backend.vercel.app/addfavfruit', { token: token, fruit: data.id });
         if (response.status === 200) {
           console.log("Añadido a favoritos");
           setStyle("fav-button");
@@ -38,7 +38,7 @@ export const BotonFav = ({ data }) => {
     }
   }else {
     changeStyle = async ( token ) => {
-      const response = await axios.post('https://e04-e04.vercel.app/removefavfruit', { token: token, fruit: data.id });
+      const response = await axios.post('https://e04-backend.vercel.app/removefavfruit', { token: token, fruit: data.id });
       if (response.status === 200) {
         console.log("Quitado de favoritos");
         setStyle("star-button");
