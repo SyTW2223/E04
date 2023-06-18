@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Grid } from './Grid';
 import title from '../images/header-logo.png'
+import { AuthContext } from '../components/Auth/AuthContext';
+import { Navigate } from 'react-router-dom';
 
 export const Home = () => {
-  const data = {
-    name: 'Banana',
-    family: 'Pingas',
-    calories: 100,
-    fat: 5,
-    sugar: 10,
-    carbohydrates: 20,
-    protein: 15
-  };
+  const { isLoggedIn } = useContext(AuthContext);
 
-  return (
-    <div>
-      <header className="App-header">
-        <img src={title} className="home-logo" alt="logo" />
-      </header>
-      <Grid data = {data}/>
-    </div>
-  )
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />
+  } 
+  else {
+    return (
+      <div>
+        <header className="App-header">
+          <img src={title} className="home-logo" alt="logo" />
+        </header>
+        <Grid />
+      </div>
+    )
+  }
 }

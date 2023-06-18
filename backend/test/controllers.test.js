@@ -14,7 +14,7 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 
 
-describe("Test - User Controller", () => {
+describe("Tests - User Controller", () => {
   describe('GET /home', function() {
     afterEach(function() {
       sinon.restore();

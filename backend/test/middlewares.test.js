@@ -3,7 +3,7 @@ import { app } from "../index.js";
 import { verifyJwt } from "../middlewares/verifyJwt.js";
 import jsonwebtoken from 'jsonwebtoken';
 
-describe('Test - VerifyJwt', () => {
+describe('Tests - VerifyJwt', () => {
   it('Status 403 if send "No token provided" if no token is provided', () => {
     const req = { headers: {} };
     const res = {

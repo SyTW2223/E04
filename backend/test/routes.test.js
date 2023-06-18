@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 
 
-describe("Test - Routes All", () => {
+describe("Tests - Routes All", () => {
   it("Status 404 for GET request to /", async () => {
     const response = await request(app).get("/");
     expect(response.statusCode).to.equal(404);
