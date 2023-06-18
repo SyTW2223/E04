@@ -8,7 +8,7 @@ export const Grid = () => {
   useEffect(() => {
     const fetchFruits = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/home');
+        const response = await axios.get('https://e04-e04.vercel.app/home');
         setFruits(response.data);
       } catch (error) {
         console.error('Error al obtener los objetos:', error);
