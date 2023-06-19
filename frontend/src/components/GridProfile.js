@@ -9,7 +9,7 @@ export const GridProfile = () => {
 
   const fetchFruits = async ( token ) => {
     try {
-      const response = await axios.post('https://e04-backend.vercel.app/profile', { token: token });
+      const response = await axios.post('http://localhost:8080/profile', { token: token });
       setFruits(response.data);
     } catch (error) {
       console.error('Error al obtener los objetos:', error);

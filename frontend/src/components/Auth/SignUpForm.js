@@ -27,7 +27,7 @@ class SignupForm extends Component {
     console.log('Valores del formulario:', username, password);
 
 
-    axios.post('https://e04-backend.vercel.app/signup', { "user": username, "password": password, "fruits": [] })
+    axios.post('http://localhost:8080/signup', { "user": username, "password": password, "fruits": [] })
       .then((response) => {
         // Aquí puedes manejar la respuesta del backend
         console.log(response.status);
