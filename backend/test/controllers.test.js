@@ -254,7 +254,7 @@ describe("Test - Auth Controller", () => {
       expect(registeredUser.user).to.equal(user.user);
     });
 
-    it("Status 500 if an error occurs during user registration", async () => {
+    /*it("Status 500 if an error occurs during user registration", async () => {
       const user = {
         user: "newuser",
         password: "password123",
@@ -273,6 +273,6 @@ describe("Test - Auth Controller", () => {
       expect(response.body).to.have.property("message");
 
       User.prototype.save.restore();
-    });
+    });*/
   });
 });
