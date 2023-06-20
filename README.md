@@ -28,7 +28,6 @@
 
 ## Bibliotecas utilizadas en Frontend:
 - React, React-router-dom, Axios, bootstrap, webpack-dev-server y web-vitals.
-- 
 ## Instalación de Fruit.js
 Para el despliegue de la aplicación, primero se debe de clonar el repositorio.
 ```bash
@@ -41,15 +40,17 @@ Para el despliegue de la aplicación, primero se debe de clonar el repositorio.
 ```
 ## Instalación de las dependencias del servidor:
 ```bash
-    cd E04/backend
-    npm install
+cd E04/backend
+npm install
 ```
 ## Ejecución de la aplicación
 Para el servidor, primero se deberá de compilar:
 ```bash
-    npm start
+cd E04/backend
+npm start
 ```
 Para el frontend:
 ```bash
-    npm start
+cd E04/frontend
+npm start
 ```
