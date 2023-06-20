@@ -12,7 +12,7 @@
     </a>
 </p>
 
-
+## Integrantes
 - José Javier Díaz González - alu0101128894@ull.edu.es
 - José Orlando Nina Orellana - alu0101322308@ull.edu.es
 - Adahi Oval Afonso - alu0101242071@ull.edu.es
@@ -22,3 +22,34 @@
 | Página de despliegue:|
 | --- |
 | [Despliegue Fruit.js](https://fruitjs.vercel.app/) |
+
+## Bibliotecas utilizadas en Backend:
+- Mongoose, Axios, jsonwebtoken, bcryptjs, mongoDB, cors, express, assert, chai, mocha y supertest.
+
+## Bibliotecas utilizadas en Frontend:
+- React, React-router-dom, Axios, bootstrap, webpack-dev-server y web-vitals.
+- 
+## Instalación de Fruit.js
+Para el despliegue de la aplicación, primero se debe de clonar el repositorio.
+```bash
+    git clone git@github.com:SyTW2223/E04.git
+```
+## Instalación de las dependencias del cliente:
+```bash
+    cd E04/frontend
+    npm install
+```
+## Instalación de las dependencias del servidor:
+```bash
+    cd E04/backend
+    npm install
+```
+## Ejecución de la aplicación
+Para el servidor, primero se deberá de compilar:
+```bash
+    npm start
+```
+Para el frontend:
+```bash
+    npm start
+```
