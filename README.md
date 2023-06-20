@@ -31,12 +31,12 @@
 ## Instalación de Fruit.js
 Para el despliegue de la aplicación, primero se debe de clonar el repositorio.
 ```bash
-    git clone git@github.com:SyTW2223/E04.git
+git clone git@github.com:SyTW2223/E04.git
 ```
 ## Instalación de las dependencias del cliente:
 ```bash
-    cd E04/frontend
-    npm install
+cd E04/frontend
+npm install
 ```
 ## Instalación de las dependencias del servidor:
 ```bash
